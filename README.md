@@ -35,4 +35,6 @@ claude-school-system/
 
 **V2 (Session 6+):**
 - Knowledge compiler
-- GitHub integration 
+- GitHub integration
+
+Last updated: January 30, 2026
