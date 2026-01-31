@@ -60,7 +60,7 @@
 - `git log --oneline` - Condensed history view
 
 **Core Workflow:**
-- `git add <file>` / `git add .` (git add period is add all) - Stage changes
+- `git add <file>` / `git add .` (git add period is add all changes) - Stage changes
 - `git commit -m "message"` - Create snapshot
 - `git push` - Upload to GitHub
 
