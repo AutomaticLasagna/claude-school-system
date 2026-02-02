@@ -1,0 +1,43 @@
+{
+    "currentStage": 1,
+    "currentSession": 2,
+    "stages": [
+      {
+        "id": 1,
+        "name": "Foundation",
+        "sessions": [1, 2, 3, 4, 5, 6],
+        "description": "Core skills and environment setup"
+      },
+      {
+        "id": 2,
+        "name": "Basic Agents",
+        "sessions": [7, 8, 9],
+        "description": "First sub-agents and hooks introduction"
+      },
+      {
+        "id": 3,
+        "name": "Validation Patterns",
+        "sessions": [10, 11, 12],
+        "description": "Self-validating agents and testing"
+      },
+      {
+        "id": 4,
+        "name": "Multi-Agent Workflows",
+        "sessions": [13, 14, 15],
+        "description": "Parallel agents and orchestration"
+      },
+      {
+        "id": 5,
+        "name": "Production Patterns",
+        "sessions": [16, 17, 18],
+        "description": "Error handling, monitoring, deployment"
+      },
+      {
+        "id": 6,
+        "name": "Advanced Topics",
+        "sessions": [19, 20],
+        "description": "Custom plugins and advanced patterns"
+      }
+    ],
+    "completedSessions": [1]
+  }

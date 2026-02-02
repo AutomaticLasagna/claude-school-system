@@ -1,0 +1,60 @@
+{
+    "gates": [
+      {
+        "id": "git-workflows",
+        "name": "Git Workflows",
+        "requiredForSession": 3,
+        "criteria": [
+          "Understand commits and staging",
+          "Can create and push to remote repository",
+          "Understand branches (basic concept)",
+          "Know how to check repository status"
+        ],
+        "status": "in-progress"
+      },
+      {
+        "id": "spec-prompts",
+        "name": "Spec Prompts",
+        "requiredForSession": 7,
+        "criteria": [
+          "Can write clear requirements",
+          "Understand the generate-then-refine workflow",
+          "Can break down complex tasks"
+        ],
+        "status": "locked"
+      },
+      {
+        "id": "sub-agents",
+        "name": "Sub-Agent Architecture",
+        "requiredForSession": 10,
+        "criteria": [
+          "Understand agent isolation",
+          "Can design agent communication",
+          "Know when to split vs combine agents"
+        ],
+        "status": "locked"
+      },
+      {
+        "id": "hooks",
+        "name": "Hooks & Validation",
+        "requiredForSession": 13,
+        "criteria": [
+          "Understand self-validating patterns",
+          "Can write effective test cases",
+          "Know how to create feedback loops"
+        ],
+        "status": "locked"
+      },
+      {
+        "id": "production",
+        "name": "Production Workflows",
+        "requiredForSession": 16,
+        "criteria": [
+          "Understand error handling patterns",
+          "Can implement monitoring",
+          "Know deployment best practices"
+        ],
+        "status": "locked"
+      }
+    ]
+  }

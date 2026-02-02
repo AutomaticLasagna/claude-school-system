@@ -1,0 +1,126 @@
+.roadmap-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stage {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stage:hover {
+  transform: translateX(4px);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.stage.current {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+}
+
+.stage.complete {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.05);
+}
+
+.stage-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.stage.current .stage-number {
+  background: #667eea;
+  color: white;
+}
+
+.stage.complete .stage-number {
+  background: #27ae60;
+  color: white;
+}
+
+.stage-info {
+  flex: 1;
+}
+
+.stage-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #667eea;
+}
+
+.stage.current .stage-info h3 {
+  color: #8b9aff;
+}
+
+.stage.complete .stage-info h3 {
+  color: #27ae60;
+}
+
+.stage-info p {
+  margin: 0 0 1rem 0;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.stage-progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar-container {
+  flex: 1;
+  height: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1rem;
+  transition: width 0.5s ease;
+}
+
+.stage.complete .progress-bar-fill {
+  background: #27ae60;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: light) {
+  .stage {
+    background: rgba(0, 0, 0, 0.02);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .stage-info p {
+    color: #666;
+  }
+
+  .progress-bar-container {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
