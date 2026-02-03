@@ -3,11 +3,18 @@
 
 export async function loadDashboardData() {
   try {
-    const [progress, gates, latestSession] = await Promise.all([
-      fetch('/data/progress.json').then(r => r.json()),
-      fetch('/data/quality-gates.json').then(r => r.json()),
-      loadLatestSession()
-    ]);
+    console.log('Attempting to load data from:', window.location.origin);
+    console.log('Fetching: /data/progress.json');
+
+    const progressResponse = await fetch('/data/progress.json');
+    console.log('Progress response status:', progressResponse.status);
+    console.log('Progress response headers:', progressResponse.headers.get('content-type'));
+    const progressText = await progressResponse.text();
+    console.log('Progress response text (first 100 chars):', progressText.substring(0, 100));
+
+    const progress = JSON.parse(progressText);
+    const gates = await fetch('/data/quality-gates.json').then(r => r.json());
+    const latestSession = await loadLatestSession();
 
     return { progress, gates, latestSession };
   } catch (error) {
