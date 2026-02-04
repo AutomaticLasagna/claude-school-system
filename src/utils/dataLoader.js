@@ -3,18 +3,49 @@
 
 export async function loadDashboardData() {
   try {
-    console.log('Attempting to load data from:', window.location.origin);
-    console.log('Fetching: /data/progress.json');
+    const baseUrl = window.location.origin;
+    console.log('Browser URL:', window.location.href);
+    console.log('Fetching from origin:', baseUrl);
 
-    const progressResponse = await fetch('/data/progress.json');
+    const fetchOptions = {
+      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-cache' }
+    };
+
+    // Fetch progress.json
+    const progressUrl = `${baseUrl}/data/progress.json`;
+    console.log('Fetching:', progressUrl);
+
+    const progressResponse = await fetch(progressUrl, fetchOptions);
     console.log('Progress response status:', progressResponse.status);
-    console.log('Progress response headers:', progressResponse.headers.get('content-type'));
-    const progressText = await progressResponse.text();
-    console.log('Progress response text (first 100 chars):', progressText.substring(0, 100));
 
-    const progress = JSON.parse(progressText);
-    const gates = await fetch('/data/quality-gates.json').then(r => r.json());
-    const latestSession = await loadLatestSession();
+    // Check if response is ok
+    if (!progressResponse.ok) {
+      throw new Error(`HTTP error! status: ${progressResponse.status}`);
+    }
+
+    // Check content type
+    const contentType = progressResponse.headers.get('content-type');
+    console.log('Content-Type:', contentType);
+
+    if (!contentType || !contentType.includes('application/json')) {
+      const text = await progressResponse.text();
+      console.error('Expected JSON but received:', text.substring(0, 200));
+      throw new TypeError(`Expected JSON but got: ${contentType}`);
+    }
+
+    const progress = await progressResponse.json();
+    console.log('Progress loaded successfully:', progress.currentSession);
+
+    // Fetch quality gates
+    const gatesResponse = await fetch(`${baseUrl}/data/quality-gates.json`, fetchOptions);
+    if (!gatesResponse.ok) {
+      throw new Error(`Failed to load quality-gates.json: ${gatesResponse.status}`);
+    }
+    const gates = await gatesResponse.json();
+
+    // Fetch latest session
+    const latestSession = await loadLatestSession(baseUrl, fetchOptions);
 
     return { progress, gates, latestSession };
   } catch (error) {
@@ -23,13 +54,17 @@ export async function loadDashboardData() {
   }
 }
 
-async function loadLatestSession() {
+async function loadLatestSession(baseUrl, fetchOptions) {
   // Try loading sessions in reverse order until we find one
   for (let i = 20; i >= 1; i--) {
     try {
-      const session = await fetch(`/data/sessions/session-${String(i).padStart(2, '0')}.json`);
+      const url = `${baseUrl}/data/sessions/session-${String(i).padStart(2, '0')}.json`;
+      const session = await fetch(url, fetchOptions);
       if (session.ok) {
-        return session.json();
+        const contentType = session.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          return session.json();
+        }
       }
     } catch {
       continue;

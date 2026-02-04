@@ -1,6 +1,7 @@
 {
   "currentStage": 1,
   "currentSession": 4,
+  "completedSessions": [1, 2, 3],
   "systemStatus": "Currently in Session 4 (incomplete) - dashboard built but not validated. Must complete Session 4 before starting Session 5.",
   "sessions": {
     "1": {

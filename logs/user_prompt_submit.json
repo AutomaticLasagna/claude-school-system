@@ -1,0 +1,58 @@
+[
+  {
+    "session_id": "60ad8e57-9939-4ffa-ad53-0587ab384436",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\60ad8e57-9939-4ffa-ad53-0587ab384436.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "hello! testing hooks system."
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "/workflows:review "
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "Dashboard shows \"failed to load data\" "
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "dataLoader.js:21 Failed to load dashboard data: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON\ndataLoader.js:21 Failed to load dashboard data: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON"
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "default",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "still not working: // Load JSON files for dashboard display\n// Note: In development, Vite serves files from public/\n\nexport async function loadDashboardData() {\n  try {\n    console.log('Attempting to load data from:', window.location.origin);\n    console.log('Fetching: /data/progress.json');\n\n    const progressResponse = await fetch('/data/progress.json');\n    console.log('Progress response status:', progressResponse.status);\n    console.log('Progress response headers:', progressResponse.headers.get('content-type'));\n    const progressText = await progressResponse.text();\n    console.log('Progress response text (first 100 chars):', progressText.substring(0, 100));\n\n    const progress = JSON.parse(progressText);\n    const gates = await fetch('/data/quality-gates.json').then(r => r.json());\n    const latestSession = await loadLatestSession();\n\n    return { progress, gates, latestSession };\n  } catch (error) {\n    console.error('Failed to load dashboard data:', error);\n    return null;\n  }\n}\n\nasync function loadLatestSession() {\n  // Try loading sessions in reverse order until we find one\n  for (let i = 20; i >= 1; i--) {\n    try {\n      const session = await fetch(`/data/sessions/session-${String(i).padStart(2, '0')}.json`);\n      if (session.ok) {\n        return session.json();\n      }\n    } catch {\n      continue;\n    }\n  }\n  return null;\n}\n\nexport function calculateProgress(progress) {\n  const totalSessions = 20;\n  const completed = progress.completedSessions?.length || 0;\n  return Math.round((completed / totalSessions) * 100);\n}\n\nexport function getStageName(stageId, stages) {\n  const stage = stages.find(s => s.id === stageId);\n  return stage ? stage.name : `Stage ${stageId}`;\n}\n"
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "suggested fix: // dataLoader.js\nexport async function loadDashboardData() {\n  try {\n    const response = await fetch('/api/dashboard'); // Ensure this URL is correct\n\n    // Check if the response is successful (status 200-299)\n    if (!response.ok) {\n      throw new Error(`HTTP error! status: ${response.status}`);\n    }\n\n    // Check if the content type is actually JSON\n    const contentType = response.headers.get(\"content-type\");\n    if (!contentType || !contentType.includes(\"application/json\")) {\n      const text = await response.text();\n      console.error(\"Expected JSON but received:\", text.substring(0, 100));\n      throw new TypeError(\"Oops, we haven't got JSON!\");\n    }\n\n    return await response.json();\n  } catch (error) {\n    console.error('Failed to load dashboard data:', error);\n    return null;\n  }\n} Summary\nThe Cause: Your fetch request is hitting a URL that returns HTML (likely an error page or index.html) instead of JSON.\nThe Fix: Verify the API endpoint URL is correct and add a check for response.ok and the content-type header before calling .json().\nData used to understand this message"
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "UserPromptSubmit",
+    "prompt": "it works now!"
+  }
+]

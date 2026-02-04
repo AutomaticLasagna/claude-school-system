@@ -1,0 +1,58 @@
+[
+  {
+    "session_id": "ea03bdda-8b3e-4010-9a9a-8d06210741ce",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\ea03bdda-8b3e-4010-9a9a-8d06210741ce.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "213ceec5-37c7-47f9-b685-d1248c3c12c4",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\213ceec5-37c7-47f9-b685-d1248c3c12c4.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "2f8e137d-b707-4907-a36e-9308e9fe7d41",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\2f8e137d-b707-4907-a36e-9308e9fe7d41.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "17075077-1141-4f4f-8931-a9b46feb1bc8",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\17075077-1141-4f4f-8931-a9b46feb1bc8.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "60ad8e57-9939-4ffa-ad53-0587ab384436",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\60ad8e57-9939-4ffa-ad53-0587ab384436.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "d5bdd513-1435-404e-b5d4-849cbef2c269",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\d5bdd513-1435-404e-b5d4-849cbef2c269.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "4b7880c3-8b8c-4082-8dbe-ceddbfcb4310",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\4b7880c3-8b8c-4082-8dbe-ceddbfcb4310.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-sonnet-4-5-20250929"
+  }
+]

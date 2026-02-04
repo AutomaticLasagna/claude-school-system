@@ -1,0 +1,10 @@
+[
+  {
+    "session_id": "60ad8e57-9939-4ffa-ad53-0587ab384436",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\60ad8e57-9939-4ffa-ad53-0587ab384436.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionEnd",
+    "reason": "prompt_input_exit",
+    "logged_at": "2026-02-03T16:41:16.550055"
+  }
+]
