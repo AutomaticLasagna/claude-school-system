@@ -54,5 +54,21 @@
     "hook_event_name": "SessionStart",
     "source": "startup",
     "model": "claude-sonnet-4-5-20250929"
+  },
+  {
+    "session_id": "fafa2345-8b87-455d-8822-6ead7993acf7",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\fafa2345-8b87-455d-8822-6ead7993acf7.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-haiku-4-5-20251001"
+  },
+  {
+    "session_id": "69315ff7-388e-4200-92cd-21b92f56e803",
+    "transcript_path": "C:\\Users\\G1oRe\\.claude\\projects\\E--Claude-Code-learning-claude-school-system\\69315ff7-388e-4200-92cd-21b92f56e803.jsonl",
+    "cwd": "E:\\Claude Code\\learning\\claude-school-system",
+    "hook_event_name": "SessionStart",
+    "source": "startup",
+    "model": "claude-haiku-4-5-20251001"
   }
 ]

@@ -417,25 +417,28 @@ Build → Merge → (token limit) → Exit
 
 ## Next Session Preview
 
-**Session 5: Self-Validating Agents & Hooks**
+**Session 5: Compound Workflow & Documentation**
 
 **Now that we have:**
 - Working dashboard ✅
 - Clean project state ✅
 - Emergency protocols ✅
 - Understanding of plugin workflows ✅
+- Hooks already installed ✅ (bonus from Feb 3)
 
 **We can focus on:**
-- Building agents that validate themselves
-- Understanding hooks system
-- Preventing Session 4 problems automatically
-- Creating validation patterns
+- Learning /workflows:review to analyze our code
+- Learning /workflows:compound to document learnings
+- Completing the full Plan → Work → Review → Compound cycle
+- Creating a searchable knowledge base
 
 **Prerequisites Met:**
 - ✅ React basics understood
 - ✅ Git workflows mastered
-- ✅ Plugin workflows experienced
+- ✅ Plugin workflows experienced (/workflows:brainstorm, plan, work)
 - ✅ Emergency protocols established
+
+**The Goal:** Turn Session 1-4 learnings into documented solutions that compound knowledge.
 
 ---
 
@@ -464,7 +467,7 @@ Build → Merge → (token limit) → Exit
 - Use emergency protocols
 - Validate all work before merge
 - Complete plugin workflows fully
-- Build self-validating agents to prevent this
+- Document learnings with /workflows:compound
 
 ---
 
@@ -472,10 +475,10 @@ Build → Merge → (token limit) → Exit
 **Dashboard Status:** Working ✅  
 **Documentation:** Complete ✅  
 **Lessons Learned:** Documented ✅  
-**Ready for:** Session 5 - Self-Validating Agents
+**Ready for:** Session 5 - Compound Workflow & Documentation
 
 ---
 
 *Completed: February 3, 2026*  
-*Next: Session 5 - Self-Validating Agents & Hooks*  
+*Next: Session 5 - /workflows:compound & /workflows:review*  
 *Quality Achievement: Working Dashboard + Emergency Protocols*
