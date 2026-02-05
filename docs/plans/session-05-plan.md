@@ -15,6 +15,25 @@ By the end of this session:
 3. ☐ Document learnings from Sessions 1-4
 4. ☐ Complete the full Plan → Work → Review → Compound cycle
 5. ☐ Create knowledge patterns for future sessions
+6. ☐ **Dashboard Feature:** Click session → expand to show details
+
+---
+
+## 🖥️ Dashboard Application: Click to Expand
+
+**What you'll build:** Make sessions in the dashboard clickable to show details.
+
+**Concepts you'll learn:**
+- React `useState` hook (toggle visibility)
+- Conditional rendering (`{isExpanded && <Details />}`)
+- Event handlers (`onClick`)
+- Component props (passing session data)
+
+**The feature:**
+```
+Before: Static list of sessions
+After:  Click any session → expands to show full details
+```
 
 ---
 
@@ -153,6 +172,40 @@ Document:
 **Step 4.2: Prepare for Stage 2**
 - Review what's next (Session 6: Understanding Hooks)
 - Note any gaps in foundation
+
+### Part 5: Build Dashboard Feature (45 min)
+
+**Step 5.1: Add useState to session cards**
+
+```jsx
+// In your session component
+const [expandedSession, setExpandedSession] = useState(null);
+
+// Toggle function
+const toggleSession = (id) => {
+  setExpandedSession(expandedSession === id ? null : id);
+};
+```
+
+**Step 5.2: Make sessions clickable**
+
+```jsx
+<div onClick={() => toggleSession(session.id)}>
+  {session.title}
+  {expandedSession === session.id && (
+    <div className="session-details">
+      <p>{session.summary}</p>
+      <p>Skills: {session.learn.join(', ')}</p>
+    </div>
+  )}
+</div>
+```
+
+**Step 5.3: Style the expansion**
+- Add transition for smooth expand/collapse
+- Show indicator (▶ vs ▼) for state
+
+**Quality Gate:** Can you explain when useState causes a re-render?
 
 ---
 
