@@ -475,10 +475,10 @@ Build → Merge → (token limit) → Exit
 **Dashboard Status:** Working ✅  
 **Documentation:** Complete ✅  
 **Lessons Learned:** Documented ✅  
-**Ready for:** Session 5 - Compound Workflow & Documentation
+**Ready for:** Session 5 - Compound Workflow & Dashboard Feature
 
 ---
 
 *Completed: February 3, 2026*  
-*Next: Session 5 - /workflows:compound & /workflows:review*  
+*Next: Session 5 - /workflows:compound, /workflows:review + Click-to-Expand Feature*  
 *Quality Achievement: Working Dashboard + Emergency Protocols*
