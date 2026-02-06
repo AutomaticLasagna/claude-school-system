@@ -10,7 +10,17 @@ function serveDataDir() {
     name: 'serve-data-dir',
     configureServer(server) {
       server.middlewares.use('/data', (req, res, next) => {
-        const filePath = path.join(process.cwd(), 'data', req.url)
+        const dataDir = path.resolve(process.cwd(), 'data')
+        // Decode URL to catch encoded traversal like %2e%2e (encoded ..)
+        const decoded = decodeURIComponent(req.url).replace(/^\//, '')
+        const filePath = path.resolve(dataDir, decoded)
+
+        // Prevent path traversal attacks
+        if (!filePath.startsWith(dataDir + path.sep) && filePath !== dataDir) {
+          res.statusCode = 403
+          res.end('Forbidden')
+          return
+        }
 
         if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
           res.setHeader('Content-Type', 'application/json')
@@ -29,10 +39,7 @@ export default defineConfig({
   plugins: [react(), serveDataDir()],
   publicDir: 'public',
   server: {
-    host: '0.0.0.0',
-    port: 5174,
-    fs: {
-      allow: ['..']
-    }
+    host: 'localhost',
+    port: 5174
   }
 })
