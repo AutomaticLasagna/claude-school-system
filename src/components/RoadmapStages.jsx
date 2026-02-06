@@ -4,11 +4,13 @@ export default function RoadmapStages({ stages, currentStage, completedSessions 
   return (
     <div className="roadmap-stages">
       {stages.map(stage => {
-        const stageComplete = stage.sessions.every(s =>
+        // Derive session numbers from sessionDetails keys
+        const stageSessions = Object.keys(stage.sessionDetails || {}).map(Number);
+        const stageComplete = stageSessions.length > 0 && stageSessions.every(s =>
           completedSessions.includes(s)
         );
         const stageCurrent = stage.id === currentStage;
-        const stageProgress = stage.sessions.filter(s =>
+        const stageProgress = stageSessions.filter(s =>
           completedSessions.includes(s)
         ).length;
 
@@ -25,11 +27,11 @@ export default function RoadmapStages({ stages, currentStage, completedSessions 
                 <span className="progress-bar-container">
                   <span
                     className="progress-bar-fill"
-                    style={{ width: `${(stageProgress / stage.sessions.length) * 100}%` }}
+                    style={{ width: `${stageSessions.length ? (stageProgress / stageSessions.length) * 100 : 0}%` }}
                   />
                 </span>
                 <span className="progress-text">
-                  {stageProgress}/{stage.sessions.length} sessions
+                  {stageProgress}/{stageSessions.length} sessions
                 </span>
               </div>
             </div>

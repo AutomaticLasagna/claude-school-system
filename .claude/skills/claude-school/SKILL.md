@@ -94,7 +94,6 @@ For each concept:
 3. Preview: Next session builds on this by...
 4. Update: `data/sessions/session-XX.json`
 5. Update: `logs/session-XX.md`
-6. Sync: Copy to `public/data/` for dashboard
 
 ---
 
@@ -144,7 +143,7 @@ E:\Claude Code\learning\claude-school-system\
 ├── docs\
 │   └── plans\              # Session plans (session-XX-plan.md)
 ├── logs\                   # Session logs (markdown)
-├── public\data\            # Dashboard copies (sync from data/)
+├── public\                 # Static assets (Vite middleware serves data/ directly)
 └── .claude\
     ├── settings.json       # Hook configuration
     └── hooks\              # 6 hook scripts already installed
@@ -269,8 +268,8 @@ view_file data/sessions/session-{currentSession}.json
 
 ### After Session
 ```bash
-# Update and sync:
+# Update session files:
 1. Update data/sessions/session-XX.json
 2. Update logs/session-XX.md
-3. Copy data/*.json to public/data/
+3. Update data/progress.json
 ```

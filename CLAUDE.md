@@ -249,7 +249,7 @@ npm install
 npm run dev
 ```
 
-Dashboard loads data from `data/` directory via Vite configuration.
+Dashboard loads data from `data/` directory via a custom Vite middleware plugin (see `vite.config.js`). No need to copy files to `public/` - the middleware serves `data/` directly during development.
 
 ### File Structure
 
@@ -267,8 +267,7 @@ claude-school-system/
 │   └── sessions/
 │       ├── session-01.json
 │       └── ...
-├── public/
-│   └── data/                  # Dashboard copies (sync from data/)
+├── public/                      # Static assets (Vite serves data/ via middleware)
 ├── logs/
 │   ├── session-01.md
 │   └── ...
