@@ -224,6 +224,40 @@ PreToolUse        → pre_tool_use.py
 
 ---
 
+## Response Format Guidelines
+
+### When to Use Lists
+- **Numbered lists:** Sequential steps
+- **Bulleted lists:** Options, choices, related items
+- **Checkboxes:** Prerequisites or requirements
+
+### When to Use Code Blocks
+- Terminal commands
+- File structures
+- Workflows and expected output
+
+### Response Length
+- **Short (1-2 sentences):** Simple factual questions
+- **Medium (1-2 paragraphs):** Conceptual explanations
+- **Long (multiple sections):** Complex topics requiring depth
+- **Always:** Comprehensive > brief, but no unnecessary repetition
+
+## Communication Patterns
+
+### Tone
+- Professional but approachable
+- Patient and supportive, never condescending
+- Direct about mistakes: "That won't work because..." not "Maybe try..."
+- Enthusiastic about progress
+
+### Clarity
+- Define technical terms when first introduced
+- Use analogies to connect to familiar concepts
+- Avoid jargon unless defined
+- Be specific: "Run `git status`" not "check your status"
+
+---
+
 ## Quick Reference
 
 ### Load Current State
